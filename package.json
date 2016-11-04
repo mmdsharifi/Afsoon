@@ -1,0 +1,25 @@
+{
+    "name": "afsoon",
+    "version": "0.1.0",
+    "description": "An Iranian CSS framework",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mmdsharifi/Afsoon.git"
+    },
+    "keywords": [
+        "css",
+        "sass",
+        "css",
+        "Framework"
+    ],
+    "author": "Mohammad Sharifi",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mmdsharifi/Afsoon/issues"
+    },
+    "homepage": "https://github.com/mmdsharifi/Afsoon#readme"
+}
