@@ -8,6 +8,15 @@ const wiredep = require('wiredep').stream;
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+// postcss modules
+const autoprefixer = require('autoprefixer');
+const rtlcss = require('rtlcss');
+
+const processors = [
+        autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}),
+        rtlcss 
+    ];
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
@@ -17,7 +26,7 @@ gulp.task('styles', () => {
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe($.postcss(processors))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({stream: true}));
